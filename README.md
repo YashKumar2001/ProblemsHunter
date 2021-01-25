@@ -7,6 +7,15 @@ The bot will find problems(sorted by number of submissions) of given ratings tha
 
 [Google Chrome](https://www.google.com/intl/en_in/chrome/)
 
-# To Install Requirements: pip install -r requirements.txt
+Install Requirements
+```bash
+pip install -r requirements.txt
+```
 
-# To run : python3 app.py
+## Usage
+
+Run it using this command.
+
+```bash
+python3 test.py
+```
