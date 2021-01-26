@@ -14,11 +14,17 @@ pip install -r requirements.txt
 
 ## Usage
 
-Run it using this command.
+1.Run it using this command.
 
 ```bash
 python3 test.py
 ```
+2.Enter usernames separated by space.
+
+3.Enter the problem ratings separated by space.
+
+The bot will then take some time to process and show you results in the format : rating: link to problem.
+To see the bot working comment line no. 54.
 
 # Note:
 To avoid webdriver from downloading again and again, download [chrome web driver](http://chromedriver.chromium.org/downloads?tmpl=%2Fsystem%2Fapp%2Ftemplates%2Fprint%2F&showPrintDialog=1) for your chrome version and extract it to a location and paste the location in variable PATH and replace line 55 in app.py with:
