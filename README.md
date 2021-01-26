@@ -26,7 +26,7 @@ python3 test.py
 The bot will then take some time to process and will show results in terminal int the format:
 
 ```bash
-rating: link to problem.
+rating: link to problem
 ```
 
 To see the bot working comment line no. 54.
