@@ -31,8 +31,13 @@ rating: link to problem
 
 
 # Note:
-To avoid webdriver from downloading again and again, download [chrome web driver](http://chromedriver.chromium.org/downloads?tmpl=%2Fsystem%2Fapp%2Ftemplates%2Fprint%2F&showPrintDialog=1) for your chrome version and extract it to a location and paste the location in variable PATH and replace line 83 in app.py with:
+To avoid webdriver from downloading again and again, download [chrome web driver](http://chromedriver.chromium.org/downloads?tmpl=%2Fsystem%2Fapp%2Ftemplates%2Fprint%2F&showPrintDialog=1) for your chrome version and extract it to a location and paste the location in variable PATH and replace line :
 
 ```bash
 driver = webdriver.Chrome(PATH, options=chrome_options)
+```
+int app.py with:
+
+```bash
+driver = webdriver.Chrome( ChromeDriverManager().install(), options=chrome_options)
 ```
