@@ -29,10 +29,9 @@ The bot will then take some time to process and will show results in terminal in
 rating: link to problem
 ```
 
-To see the bot working comment line no. 54.
 
 # Note:
-To avoid webdriver from downloading again and again, download [chrome web driver](http://chromedriver.chromium.org/downloads?tmpl=%2Fsystem%2Fapp%2Ftemplates%2Fprint%2F&showPrintDialog=1) for your chrome version and extract it to a location and paste the location in variable PATH and replace line 55 in app.py with:
+To avoid webdriver from downloading again and again, download [chrome web driver](http://chromedriver.chromium.org/downloads?tmpl=%2Fsystem%2Fapp%2Ftemplates%2Fprint%2F&showPrintDialog=1) for your chrome version and extract it to a location and paste the location in variable PATH and replace line 83 in app.py with:
 
 ```bash
 driver = webdriver.Chrome(PATH, options=chrome_options)
