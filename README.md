@@ -23,7 +23,12 @@ python3 test.py
 
 3.Enter the problem ratings separated by space.
 
-The bot will then take some time to process and show you results in the format : rating: link to problem.
+The bot will then take some time to process and will show results in terminal int the format:
+
+```bash
+rating: link to problem.
+```
+
 To see the bot working comment line no. 54.
 
 # Note:
