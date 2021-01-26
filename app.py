@@ -8,7 +8,7 @@ import time
 from termcolor import colored
 import stdiomask
 
-PATH='/Users/yashkumar/Documents/chromedriver/drivers/chromedriver/mac64/87.0.4280.88/chromedriver'
+PATH=' '
 
 #---------------------------------for finding user solved problems ------------------------------------#
 
