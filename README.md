@@ -7,7 +7,7 @@ The bot will find problems(sorted by number of submissions) of given ratings tha
 
 [Google Chrome](https://www.google.com/intl/en_in/chrome/)
 
-Install Requirements
+TO install Requirements run command:
 ```bash
 pip install -r requirements.txt
 ```
