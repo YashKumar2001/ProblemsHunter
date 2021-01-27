@@ -13,7 +13,7 @@ import time
 import sys
 from os import system, name 
 
-PATH='ChromeDriverManager().install()'
+PATH=''
 done = False
 
 # clear function to clear terminal screen
@@ -87,7 +87,7 @@ def search(diff):
 chrome_options = webdriver.ChromeOptions()
 # comment line below to see chrome
 chrome_options.headless = True
-driver = webdriver.Chrome(PATH, options=chrome_options)
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 wait=WebDriverWait(driver, 20)
 
 # Set for solved problems by users
