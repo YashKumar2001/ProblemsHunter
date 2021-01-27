@@ -13,7 +13,7 @@ import time
 import sys
 from os import system, name 
 
-PATH=''
+PATH='ChromeDriverManager().install()'
 done = False
 
 # clear function to clear terminal screen
@@ -59,6 +59,13 @@ def search_solved():
                 id=link[4]+link[6]
                 solved.add(id)
 
+#------------------------------------Problems added in past--------------------------------------------#
+#To avoid adding problems that were part of past mashup
+def past_problems():
+    with open('solved.txt') as f:
+        for line in f:
+            solved.add(line.rstrip())
+
 #------------------------------------Part for finding unsolved problems by users-------------#
 
 # Search for problems with difficulty diff
@@ -80,11 +87,12 @@ def search(diff):
 chrome_options = webdriver.ChromeOptions()
 # comment line below to see chrome
 chrome_options.headless = True
-driver = webdriver.Chrome( ChromeDriverManager().install(), options=chrome_options)
+driver = webdriver.Chrome(PATH, options=chrome_options)
 wait=WebDriverWait(driver, 20)
 
 # Set for solved problems by users
 solved =set()
+past_problems()
 # user list
 users = input("Enter the usernames:\n").split(' ')
 # List of prolem ratings
@@ -100,7 +108,10 @@ for diff in lis:
 done=True
 clear()
 print("\nResults:")
+file=open('solved.txt','a')
 for key,val in prob.items():
+    file.write(val+"\n")
     print(key,end=' : ')
     print("https://codeforces.com/contest/{0}/problem/{1}".format(val[:-1],val[-1]))
+file.close()
 driver.quit()
