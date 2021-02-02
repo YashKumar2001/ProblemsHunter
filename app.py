@@ -36,6 +36,29 @@ def animate():
         sys.stdout.flush()
         time.sleep(0.1)
 
+#----------------------------------------------Login----------------------------------------------#
+def login():
+    username=''
+    password=''
+    if(username==''):
+        username=input("Enter your codeforces username:\n")
+        password=input("Enter your codeforces password:\n")
+    driver.get('https://codeforces.com/enter?')
+    driver.find_element_by_xpath('//*[@id="handleOrEmail"]').send_keys(username)
+    driver.find_element_by_xpath('//*[@id="password"]').send_keys(password)
+    driver.find_element_by_xpath('//*[@id="enterForm"]/table/tbody/tr[4]/td/div[1]/input').click()
+
+#----------------------------------------------registered users----------------------------------------------#
+def get_users():
+    link=input("Enter the link for mashup:")
+    driver.get(link)
+    driver.find_element_by_xpath('//*[@id="pageContent"]/div[1]/div[1]/div[6]/table/tbody/tr[2]/td[6]/a[2]').click()
+    rows=driver.find_elements_by_xpath('//*[@id="pageContent"]/div[5]/div[6]/table/tbody/tr')
+    for row in range(2,len(rows)):
+        td=rows[row].find_elements_by_tag_name('td')[1]
+        user=td.find_element_by_tag_name('a').text
+        users.append(user)       
+
 #---------------------------------for finding user solved problems ------------------------------------#
 
 # To search and store problems solved by users
@@ -45,7 +68,7 @@ def search_solved():
         wait.until(
             EC.element_to_be_clickable((By.XPATH, '//*[@id="verdictName"]/option[2]'))).click()
         wait.until(
-            EC.element_to_be_clickable((By.XPATH, '//*[@id="sidebar"]/div[2]/div[4]/form/div[2]/input[1]'))).click()
+            EC.element_to_be_clickable((By.XPATH, '//*[@id="sidebar"]/div[3]/div[4]/form/div[2]/input[1]'))).click()
         idx=driver.find_elements_by_class_name('page-index')
         sz=1
         if(len(idx)>0):
@@ -86,7 +109,7 @@ def search(diff):
 
 chrome_options = webdriver.ChromeOptions()
 # comment line below to see chrome
-chrome_options.headless = True
+# chrome_options.headless = True
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 wait=WebDriverWait(driver, 20)
 
@@ -94,7 +117,15 @@ wait=WebDriverWait(driver, 20)
 solved =set()
 past_problems()
 # user list
-users = input("Enter the usernames:\n").split(' ')
+users=['']
+
+choice=input("Enter the choice:\nEnter 1 to give username manually\nEnter 2 to fetch users from mashup link\n")
+if(choice=='1'):
+    users=input("enter the usernames:\n").split(' ')
+else:
+    login()
+    get_users()
+
 # List of prolem ratings
 lis=input("Enter the problem ratings:\n").split(' ')
 lis.sort()
@@ -109,7 +140,8 @@ done=True
 clear()
 print("\nResults:")
 file=open('solved.txt','a')
-for key,val in prob.items():
+for key in lis:
+    val=prob[key]
     file.write(val+"\n")
     print(key,end=' : ')
     print("https://codeforces.com/contest/{0}/problem/{1}".format(val[:-1],val[-1]))

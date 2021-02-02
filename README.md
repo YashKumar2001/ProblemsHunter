@@ -44,3 +44,7 @@ driver = webdriver.Chrome(PATH, options=chrome_options)
 
 # UPDATE 1:
 Added the feature to avoid returning problems that were ever featched by the bot before.It was needed because mashup problems does are not shown in user submissions.The file solved.txt is for storing all the problems returned by the bot.
+
+# UPDATE 2:
+Added the feature to add participants directly from the mashup contest page for that you need to give your codeforces credentials and the invitaion link of the mashup contest.
+
