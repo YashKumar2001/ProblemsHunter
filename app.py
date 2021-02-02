@@ -124,6 +124,7 @@ if(choice=='1'):
     users=input("enter the usernames:\n").split(' ')
 else:
     login()
+    time.sleep(6)
     get_users()
 
 # List of prolem ratings
