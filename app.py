@@ -50,7 +50,7 @@ def login():
 
 #----------------------------------------------registered users----------------------------------------------#
 def get_users():
-    link=input("Enter the link for mashup:")
+    link=input("Enter the invitation link for mashup:")
     driver.get(link)
     driver.find_element_by_xpath('//*[@id="pageContent"]/div[1]/div[1]/div[6]/table/tbody/tr[2]/td[6]/a[2]').click()
     rows=driver.find_elements_by_xpath('//*[@id="pageContent"]/div[5]/div[6]/table/tbody/tr')
