@@ -17,7 +17,7 @@ pip install -r requirements.txt
 1.Run it using this command:
 
 ```bash
-python3 test.py
+python3 app.py
 ```
 2.Enter usernames separated by space.
 
