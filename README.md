@@ -31,16 +31,7 @@ rating: link to problem
 
 
 # Note:
-To avoid webdriver from downloading again and again, download [chrome web driver](http://chromedriver.chromium.org/downloads?tmpl=%2Fsystem%2Fapp%2Ftemplates%2Fprint%2F&showPrintDialog=1) for your chrome version and extract it to a location and paste the location in variable PATH and change line:
-
-```bash
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
-```
-in app.py with:
-
-```bash
-driver = webdriver.Chrome(PATH, options=chrome_options)
-```
+To avoid webdriver from downloading again and again, download [chrome web driver](http://chromedriver.chromium.org/downloads?tmpl=%2Fsystem%2Fapp%2Ftemplates%2Fprint%2F&showPrintDialog=1) for your chrome version and extract it to a location and paste the location in variable PATH in app.py.
 
 # UPDATE 1:
 Added the feature to avoid returning problems that were ever featched by the bot before.It was needed because mashup problems does are not shown in user submissions.The file solved.txt is for storing all the problems returned by the bot.
